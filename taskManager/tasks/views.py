@@ -30,7 +30,6 @@ def invite_user(request):
         # Send an email with the registration link
         registration_link = request.build_absolute_uri(reverse('register')) + f"?token={token}"
         message = Mail(
-            # from_email="khanimran822002@gmail.com",
             from_email=os.environ.get("EMAIL_HOST_USER"),
             to_emails=email,
             subject='You are invited to join Task Manager',
@@ -38,7 +37,6 @@ def invite_user(request):
         try:
             sgapi = os.environ.get('EMAIL_API')
             sg = SendGridAPIClient(sgapi)
-            # sg = SendGridAPIClient('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')
             response = sg.send(message)
             print(response.status_code)
             print(response.body)
