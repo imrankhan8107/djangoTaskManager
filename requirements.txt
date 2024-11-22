@@ -1,0 +1,8 @@
+django
+djangorestframework
+django-allauth
+requests
+pyjwt
+cryptography
+sendgrid
+python-dotenv
