@@ -41,24 +41,29 @@ GOOGLE_CLIENT_ID=
    Run the following commands to apply migrations and set up the database:
 
 python manage.py makemigrations
+
 python manage.py migrate
 
 6. Create a Superuser
+   
    Create an admin user to manage the application via the admin panel:
 
 python manage.py createsuperuser
 
 7. Run the Development Server
+   
    Start the Django development server:
 
    python manage.py runserver
 
-8. API Endpoints
+9. API Endpoints
 
 - Authentication
+  
   Sign Up (Email/Password):
 
 * POST /accounts/signup/
+  
   Body: {
   "username": "your_username",
   "email": "your_email@example.com",
@@ -67,7 +72,9 @@ python manage.py createsuperuser
   }
 
 * Login (Email/Password):
+  
   POST /accounts/login/
+  
   Body: {
   "login": "your_email@example.com",
   "password": "your_password"
@@ -78,6 +85,7 @@ python manage.py createsuperuser
 - Tasks
 
 * List All Tasks (GET):
+  
   GET /api/tasks/
 
 * Create a Task (POST):
@@ -92,7 +100,9 @@ python manage.py createsuperuser
   GET /api/tasks/{task_id}/
 
 * Update a Task (PUT):
+  
   PUT /api/tasks/{task_id}/
+  
   Body: {
   "title": "Updated Title",
   "description": "Updated Description",
@@ -100,8 +110,11 @@ python manage.py createsuperuser
   }
 
 * Delete a Task (DELETE):
+  
   DELETE /api/tasks/{task_id}/
+  
   Testing the API
 
 * Run the server:
+  
   python manage.py runserver
