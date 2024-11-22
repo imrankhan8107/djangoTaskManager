@@ -11,8 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-# import os
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -76,21 +75,8 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
-# EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
-# EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
-
-
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = 'smtp.gmail.com'  # Use your SMTP server (for Gmail in this case)
-# EMAIL_PORT = 587  # Port for Gmail
-# EMAIL_USE_TLS = True  # Use TLS for secure connection
-# EMAIL_USE_SSL = False
-# # EMAIL_HOST_USER = EMAIL_HOST_USER  # Your email address
-# # EMAIL_HOST_PASSWORD = EMAIL_HOST_PASSWORD  # Your email password or App password
-# DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-
-SOCIALACCOUNT_GOOGLE_CLIENT_ID = '728949360915-attu5b4tcp5nb36aj75n1dfq76qocf3d.apps.googleusercontent.com'
-SOCIALACCOUNT_GOOGLE_SECRET = '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'
+SOCIALACCOUNT_GOOGLE_CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID")
+SOCIALACCOUNT_GOOGLE_SECRET = os.environ.get("GOOGLE_CLIENT_SECRET")
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

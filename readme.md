@@ -33,6 +33,8 @@ Create a .env file in the project directory to store sensitive information like 
 EMAIL_HOST_USER=
 EMAIL_HOST_PASSWORD=
 EMAIL_API=
+GOOGLE_CLIENT_SECRET=
+GOOGLE_CLIENT_ID=
 
 5. Set Up the Database
    Run the following commands to apply migrations and set up the database:
